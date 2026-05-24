@@ -427,10 +427,10 @@ a {
   color: var(--secondary-text-color);
   transform: translateY(-6px);
   transition:
-    max-height 280ms ease,
-    margin-top 280ms ease,
-    opacity 240ms ease,
-    transform 240ms ease;
+    max-height 250ms linear,
+    margin-top 250ms linear,
+    opacity 250ms linear,
+    transform 250ms linear;
 }
 
 .fun-facts__card:hover .fun-facts__content,
@@ -524,6 +524,74 @@ a {
   margin-top: 4px;
 }
 
+/* Footer */
+
+.site-footer {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  padding: 0 30px;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at top right, #fff3de 0%, transparent 55%),
+    linear-gradient(135deg, #ffffff 0%, #fffaf3 100%);
+  box-shadow: 0 8px 20px #18182012;
+}
+
+.site-footer__title {
+  color: var(--primary-text-color);
+  line-height: 1.25;
+}
+
+.site-footer__text {
+  color: var(--secondary-text-color);
+}
+
+.site-footer__mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-top: 4px;
+  padding: 9px 13px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background-color: #fff;
+  color: var(--secondary-text-color);
+  font-weight: 600;
+  transition:
+    border-color 250ms linear,
+    color 250ms linear,
+    transform 250ms linear,
+    box-shadow 250ms linear;
+}
+
+.site-footer__mail:hover {
+  border-color: var(--text-decoration-color);
+  color: var(--primary-text-color);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px #1818201a;
+}
+
+.site-footer__mail:focus-visible {
+  border-color: var(--text-decoration-color);
+  outline: 2px solid var(--text-decoration-color);
+  outline-offset: 2px;
+}
+
+.site-footer__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 /* Responsive */
 
 @media screen and (max-width: 768px) {
@@ -561,5 +629,10 @@ a {
 
   .skills__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__inner {
+    text-align: center;
+    align-items: center;
   }
 }
