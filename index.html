@@ -142,19 +142,50 @@
           </article>
         </div>
       </section>
-      <div class="container">
+      <section class="container">
         <div class="resume__block">
-          <div class="skills">
-            <h3 class="skills__header">Skills</h3>
-            <p class="skills__text">
-              JavaScript • TypeScript • React • Next.js • Node.js • Express •
-              Fastify • Prisma • PostgreSQL • MongoDB • REST API • HTML • CSS •
-              Adaptive/Responsive Design • Semantic Markup • Git • GitHub • Vite
-              • Trello • Agile / Scrum
-            </p>
-          </div>
+          <section class="skills">
+            <h2 class="skills__header">Skills</h2>
+            <div class="skills__tabs">
+              <button class="skills__tab is-active" type="button">All</button>
+              <button class="skills__tab" type="button">Frontend</button>
+              <button class="skills__tab" type="button">Backend</button>
+              <button class="skills__tab" type="button">
+                Tools & Soft Skills
+              </button>
+            </div>
+            <ul class="skills__grid">
+              <li
+                class="skills__tag skills__tag--frontend skills__tag--backend"
+              >
+                JavaScript
+              </li>
+              <li
+                class="skills__tag skills__tag--frontend skills__tag--backend"
+              >
+                TypeScript
+              </li>
+              <li class="skills__tag skills__tag--frontend">React</li>
+              <li class="skills__tag skills__tag--frontend">Next.js</li>
+              <li class="skills__tag skills__tag--backend">Node.js</li>
+              <li class="skills__tag skills__tag--backend">Express</li>
+              <li class="skills__tag skills__tag--backend">Fastify</li>
+              <li class="skills__tag skills__tag--backend">Prisma</li>
+              <li class="skills__tag skills__tag--backend">PostgreSQL</li>
+              <li class="skills__tag skills__tag--backend">MongoDB</li>
+              <li class="skills__tag skills__tag--backend">REST API</li>
+              <li class="skills__tag skills__tag--frontend">HTML</li>
+              <li class="skills__tag skills__tag--frontend">CSS</li>
+              <li class="skills__tag skills__tag--frontend">Semantic Markup</li>
+              <li class="skills__tag skills__tag--tools">Git</li>
+              <li class="skills__tag skills__tag--tools">GitHub</li>
+              <li class="skills__tag skills__tag--tools">Vite</li>
+              <li class="skills__tag skills__tag--tools">Trello</li>
+              <li class="skills__tag skills__tag--tools">Agile / Scrum</li>
+            </ul>
+          </section>
         </div>
-      </div>
+      </section>
       <div class="container">
         <div class="resume__block">
           <div class="main-info fh">
@@ -233,5 +264,6 @@
         </div>
       </div>
     </main>
+    <script src="main.js"></script>
   </body>
 </html>

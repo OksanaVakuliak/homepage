@@ -250,15 +250,122 @@ a {
   text-align: justify;
 }
 
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .skills__header {
   color: var(--secondary-text-color);
   text-align: center;
-  margin-bottom: 15px;
+  margin: 0;
 }
 
-.skills__text {
+.skills__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.skills__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background-color: #fff;
   color: var(--secondary-text-color);
-  text-align: justify;
+  line-height: 1;
+  transition:
+    background-color 250ms linear,
+    color 250ms linear,
+    border-color 250ms linear,
+    box-shadow 250ms linear;
+}
+
+.skills__tab:hover {
+  background-color: #fff8ed;
+  border-color: var(--text-decoration-color);
+  color: var(--primary-text-color);
+}
+
+.skills__tab:focus-visible {
+  outline: 2px solid var(--text-decoration-color);
+  outline-offset: 2px;
+  border-color: var(--text-decoration-color);
+}
+
+.skills__tab.is-active {
+  background-color: var(--text-decoration-color);
+  border-color: var(--text-decoration-color);
+  color: #fff;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.skills__tag {
+  padding: 8px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--secondary-text-color);
+  background-color: #fff;
+  text-align: center;
+  transition:
+    opacity 200ms linear,
+    transform 200ms linear,
+    border-color 200ms linear,
+    background-color 200ms linear,
+    color 200ms linear;
+}
+
+.skills__tag:hover {
+  border-color: var(--text-decoration-color);
+  background-color: #fff8ed;
+  color: var(--primary-text-color);
+}
+
+.skills__tag.is-hiding {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.skills__tag.is-hidden {
+  display: none;
+}
+
+.skills__tag.is-showing {
+  animation: skills-tag-in 0.22s ease;
+}
+
+@keyframes skills-tag-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* Experience and additional info styles */
