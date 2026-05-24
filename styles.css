@@ -145,13 +145,16 @@ a {
 .contact-info__item {
   display: flex;
   align-items: center;
+  gap: 8px;
   color: var(--secondary-text-color);
 }
 
 .contact-info__item-icon-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 20px;
+  flex-shrink: 0;
 }
 
 .contact-info__item-icon {
