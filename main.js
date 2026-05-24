@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = Array.from(document.querySelectorAll(".skills__tab"));
   const tags = Array.from(document.querySelectorAll(".skills__tag"));
+  const factTriggers = Array.from(
+    document.querySelectorAll(".fun-facts__trigger"),
+  );
 
   if (!tabs.length || !tags.length) {
     return;
@@ -93,6 +96,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setActiveTab(tab);
       applyFilter(category);
+    });
+  });
+
+  factTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const card = trigger.closest(".fun-facts__card");
+
+      if (!card) {
+        return;
+      }
+
+      card.classList.toggle("is-open");
     });
   });
 });

@@ -353,6 +353,108 @@ a {
   }
 }
 
+/* Fun facts */
+
+.fun-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fun-facts__header {
+  color: var(--secondary-text-color);
+  text-align: center;
+}
+
+.fun-facts__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.fun-facts__card {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.fun-facts__card--cat {
+  border-left: 4px solid #2f9e44;
+}
+
+.fun-facts__card--eco {
+  border-left: 4px solid #4cae62;
+}
+
+.fun-facts__card--auto {
+  border-left: 4px solid #8c8c8c;
+  grid-column: span 2;
+}
+
+.fun-facts__card--learn {
+  border-left: 4px solid #c18f2a;
+}
+
+.fun-facts__card--nature {
+  border-left: 4px solid #4b8f5d;
+}
+
+.fun-facts__trigger {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--primary-text-color);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    color 220ms linear,
+    transform 220ms linear;
+}
+
+.fun-facts__trigger:hover {
+  color: var(--text-decoration-color);
+  transform: translateX(2px);
+}
+
+.fun-facts__content {
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+  overflow: hidden;
+  color: var(--secondary-text-color);
+  transform: translateY(-6px);
+  transition:
+    max-height 280ms ease,
+    margin-top 280ms ease,
+    opacity 240ms ease,
+    transform 240ms ease;
+}
+
+.fun-facts__card:hover .fun-facts__content,
+.fun-facts__card:focus-within .fun-facts__content,
+.fun-facts__card.is-open .fun-facts__content {
+  max-height: 180px;
+  margin-top: 8px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fun-facts__card:hover .fun-facts__trigger,
+.fun-facts__card:focus-within .fun-facts__trigger,
+.fun-facts__card.is-open .fun-facts__trigger {
+  color: var(--text-decoration-color);
+}
+
+.fun-facts__trigger:focus-visible {
+  border-color: var(--text-decoration-color);
+  outline: 2px solid var(--text-decoration-color);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 /* Experience and additional info */
 
 .experiences {
@@ -427,6 +529,14 @@ a {
 @media screen and (max-width: 768px) {
   .work-style__columns {
     grid-template-columns: 1fr;
+  }
+
+  .fun-facts__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fun-facts__card--auto {
+    grid-column: auto;
   }
 
   .skills__grid {
