@@ -171,6 +171,11 @@ a {
   border: 3px solid var(--text-decoration-color);
   border-radius: 50%;
   object-fit: cover;
+  transition: transform 250ms linear;
+}
+
+.contact-info__avatar:hover {
+  transform: scale(200%);
 }
 
 /* Intro */
