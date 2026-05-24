@@ -18,6 +18,53 @@ body {
   --text-decoration-color: #ff9a00;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+svg {
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+button {
+  display: block;
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 30px;
@@ -60,10 +107,6 @@ body {
     align-items: center;
   }
 
-  .contact-info__block:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
   .experiences {
     margin-right: 0;
   }
@@ -74,6 +117,7 @@ body {
 .contact-info__header,
 .contact-info__sub-header {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .contact-info__header {
@@ -85,17 +129,44 @@ body {
 
 .contact-info__sub-header {
   color: var(--secondary-text-color);
-  margin-bottom: 30px;
+}
+
+.contact_info_container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  font-style: normal;
+  width: 100%;
 }
 
 .contact-info__block {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.contact-info__block li + li {
+  margin-top: 15px;
 }
 
 .contact-info__block--center {
   justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.contact_info_container > ul.contact-info__block:first-of-type {
+  justify-self: start;
+}
+
+.contact_info_container > .contact-info__block--center {
+  justify-self: center;
+}
+
+.contact_info_container > ul.contact-info__block:last-of-type {
+  justify-self: end;
+  align-items: flex-start;
 }
 
 .contact-info__item {
@@ -103,14 +174,10 @@ body {
   text-decoration: none;
   display: flex;
   justify-content: start;
-}
-
-.contact-info__item:not(:last-child) {
-  margin-bottom: 20px;
+  align-items: center;
 }
 
 .contact-info__item-icon-wrapper {
-  margin-right: 10px;
   width: 20px;
   display: flex;
   justify-content: center;
@@ -132,6 +199,14 @@ body {
   object-fit: cover;
   border: 3px solid;
   border-color: var(--text-decoration-color);
+}
+
+@media screen and (max-width: 576px) {
+  .contact_info_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Intro and skills styles */
