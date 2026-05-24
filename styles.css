@@ -417,6 +417,7 @@ a {
 .experiences__company-project-responsibilities {
   color: var(--secondary-text-color);
   padding-left: 20px;
+  list-style-type: disc;
 }
 
 .additional-info {
@@ -448,6 +449,11 @@ a {
 
 .additional-info__education-university-name {
   color: var(--secondary-text-color);
+}
+
+.additional-info__education-university
+  + .additional-info__education-university {
+  margin-top: 16px;
 }
 
 .additional-info__languages {
